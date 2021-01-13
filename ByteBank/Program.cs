@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ByteBank.Funcionarios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,13 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
+            Funcionario carlos = new Funcionario(1);
+
+            carlos.Nome = "Carlos";
+            carlos.CPF = "123456789123";
+            carlos.Salario = 1000.50;
+
+            Console.ReadLine();
         }
     }
 }
