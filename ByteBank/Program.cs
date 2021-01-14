@@ -31,6 +31,8 @@ namespace ByteBank
             Console.WriteLine($"Bonificacao de uma referencia de um Diretor {roberta.GetBonificacao()}");
             Console.WriteLine($"Total de bonificações {gerenciador.GetTotalBonificacao()}");
 
+            Console.WriteLine($"Total funcionarios {Funcionario.TotalDeFuncionarios}");
+
             Console.ReadLine();
         }
     }
