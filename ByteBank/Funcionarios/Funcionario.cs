@@ -8,21 +8,26 @@ namespace ByteBank.Funcionarios
 {
     class Funcionario
     {
+
+        public static int TotalDeFuncionarios { get; private set; }
+
         // 0 - Funcionario
         // 1 - Diretor
         // 2 - Designer
         // N - ...
-        private int _tipo;
+        //private int _tipo;
         public string Nome { get; set; }
         public string CPF { get; set; }
         public double Salario { get; set; }
 
-        public double GetBonificacao()
+        public Funcionario(string cpf)
         {
-            // não é uma boa prática
-            if (_tipo == 1)
-                return Salario;
+            TotalDeFuncionarios++;
+            CPF = cpf;
+        }
 
+        public virtual double GetBonificacao()
+        {
             return Salario * 0.10;
         }
     }

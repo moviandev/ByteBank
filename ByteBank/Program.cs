@@ -17,7 +17,7 @@ namespace ByteBank
 
             carlos.Nome = "Carlos";
             carlos.CPF = "123456789123";
-            carlos.Salario = 1000.50;
+            carlos.Salario = 2000;
 
             gerenciador.Registrar(carlos);
 
@@ -27,6 +27,11 @@ namespace ByteBank
             roberta.Salario = 5000;
 
             gerenciador.Registrar(roberta);
+
+            Console.WriteLine($"Bonificacao de uma referencia de um Diretor {roberta.GetBonificacao()}");
+            Console.WriteLine($"Total de bonificações {gerenciador.GetTotalBonificacao()}");
+
+            Console.WriteLine($"Total funcionarios {Funcionario.TotalDeFuncionarios}");
 
             Console.ReadLine();
         }
