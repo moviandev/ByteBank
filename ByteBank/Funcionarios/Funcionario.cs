@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ByteBank.Funcionarios
 {
-    class Funcionario
+    abstract class Funcionario
     {
 
         public static int TotalDeFuncionarios { get; private set; }

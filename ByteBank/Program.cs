@@ -1,35 +1,38 @@
 ﻿using ByteBank.Funcionarios;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ByteBank
 {
-    static class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            GerenciadorBonficacao gerenciador = new GerenciadorBonficacao();
+            CalcularBonificacao();
+            Console.ReadLine();
+        }
 
-            Funcionario carlos = new Funcionario("123456789123", 2000);
+        public static void CalcularBonificacao()
+        {
+            GerenciadorBonficacao gerenciadorBonficacao = new GerenciadorBonficacao();
 
-            carlos.Nome = "Carlos";
+            Designer pedro = new Designer("123.123.123-45");
+            pedro.Nome = "Pedro";
 
-            gerenciador.Registrar(carlos);
-
-            Diretor roberta = new Diretor("99999999999999", 5000);
+            Diretor roberta = new Diretor("123.456.789-10");
             roberta.Nome = "Roberta";
 
-            gerenciador.Registrar(roberta);
+            Auxiliar igor = new Auxiliar("987.765.432-10");
+            igor.Nome = "Igor";
 
-            Console.WriteLine($"Bonificacao de uma referencia de um Diretor {roberta.GetBonificacao()}");
-            Console.WriteLine($"Total de bonificações {gerenciador.GetTotalBonificacao()}");
+            GerenteDeConta camila = new GerenteDeConta("456.987.123-67");
+            camila.Nome = "Camila";
 
-            Console.WriteLine($"Total funcionarios {Funcionario.TotalDeFuncionarios}");
+            gerenciadorBonficacao.Registrar(pedro);
+            gerenciadorBonficacao.Registrar(roberta);
+            gerenciadorBonficacao.Registrar(igor);
+            gerenciadorBonficacao.Registrar(camila);
 
-            Console.ReadLine();
+            Console.WriteLine($"Total de bonificacao do mês {gerenciadorBonficacao.GetTotalBonificacao()}");
         }
     }
 }
