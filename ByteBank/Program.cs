@@ -27,10 +27,14 @@ namespace ByteBank
             GerenteDeConta camila = new GerenteDeConta("456.987.123-67");
             camila.Nome = "Camila";
 
+            Desenvolvedor guilherme = new Desenvolvedor("234.987.546-09");
+            guilherme.Nome = "Guilherme";
+
             gerenciadorBonficacao.Registrar(pedro);
             gerenciadorBonficacao.Registrar(roberta);
             gerenciadorBonficacao.Registrar(igor);
             gerenciadorBonficacao.Registrar(camila);
+            gerenciadorBonficacao.Registrar(guilherme);
 
             Console.WriteLine($"Total de bonificacao do mês {gerenciadorBonficacao.GetTotalBonificacao()}");
         }
