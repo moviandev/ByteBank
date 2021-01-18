@@ -1,13 +1,15 @@
-﻿using System;
+﻿using ByteBank.Sistemas;
+using System;
 
 namespace ByteBank.Funcionarios
 {
-    class Diretor : Funcionario
+    public class Diretor : FuncionarioAutenticavel
     {
-        public Diretor(string cpf) : base(cpf, 5000)
+        public Diretor(string cpf, string senha) : base(cpf, 5000, senha)
         {
             Console.WriteLine("Criando diretor");
         }
+
         public override double GetBonificacao()
         {
             return Salario * .5;
