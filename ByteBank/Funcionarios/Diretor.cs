@@ -3,9 +3,9 @@ using System;
 
 namespace ByteBank.Funcionarios
 {
-    public class Diretor : Autenticavel
+    public class Diretor : FuncionarioAutenticavel
     {
-        public Diretor(string cpf) : base(cpf, 5000)
+        public Diretor(string cpf, string senha) : base(cpf, 5000, senha)
         {
             Console.WriteLine("Criando diretor");
         }

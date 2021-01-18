@@ -16,17 +16,20 @@ namespace ByteBank
         public static void UsarSistema()
         {
             SistemaInterno sistemaInterno = new SistemaInterno();
-            Diretor roberta = new Diretor("123.456.789-10");
+            Diretor roberta = new Diretor("123.456.789-10", "abc");
             roberta.Nome = "Roberta";
-            roberta.Senha = "123";
-            sistemaInterno.Logar(roberta, "123");
             sistemaInterno.Logar(roberta, "abc");
+            sistemaInterno.Logar(roberta, "123");
 
-            GerenteDeConta camila = new GerenteDeConta("456.987.123-67");
+            GerenteDeConta camila = new GerenteDeConta("456.987.123-67", "123");
             camila.Nome = "Camila";
-            camila.Senha = "abc";
-            sistemaInterno.Logar(camila, "abc");
             sistemaInterno.Logar(camila, "123");
+            sistemaInterno.Logar(camila, "abc");
+
+            ParceiroComercial parceiro = new ParceiroComercial();
+            parceiro.Senha = "123456";
+
+            sistemaInterno.Logar(parceiro, "123456")
         }
 
         public static void CalcularBonificacao()
@@ -36,13 +39,13 @@ namespace ByteBank
             Designer pedro = new Designer("123.123.123-45");
             pedro.Nome = "Pedro";
 
-            Diretor roberta = new Diretor("123.456.789-10");
+            Diretor roberta = new Diretor("123.456.789-10", "abc");
             roberta.Nome = "Roberta";
 
             Auxiliar igor = new Auxiliar("987.765.432-10");
             igor.Nome = "Igor";
 
-            GerenteDeConta camila = new GerenteDeConta("456.987.123-67");
+            GerenteDeConta camila = new GerenteDeConta("456.987.123-67", "123");
             camila.Nome = "Camila";
 
             Desenvolvedor guilherme = new Desenvolvedor("234.987.546-09");

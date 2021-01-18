@@ -1,15 +1,10 @@
-﻿using ByteBank.Funcionarios;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace ByteBank.Sistemas
 {
     public class SistemaInterno
     {
-        public bool Logar(Autenticavel usuario, string senha)
+        public bool Logar(IAutenticavel usuario, string senha)
         {
             bool usuarioAutenticado = usuario.Autenticar(senha);
 
