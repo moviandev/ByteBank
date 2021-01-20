@@ -8,8 +8,15 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            //CalcularBonificacao();
-            UsarSistema();
+            try
+            {
+                ContaCorrente conta = new ContaCorrente(0, 0);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"EXCEPTION {e.Message}");
+            }
+
             Console.ReadLine();
         }
 
