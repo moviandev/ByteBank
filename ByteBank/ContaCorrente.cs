@@ -41,7 +41,7 @@ namespace ByteBank
                 throw new ArgumentException("Agencia com valor inválido", nameof(agencia));
             }
 
-            if (Numero <= 0)
+            if (numero <= 0)
             {
                 throw new ArgumentException("Número com valor inválido", nameof(numero));
             }
@@ -49,9 +49,9 @@ namespace ByteBank
             Agencia = agencia;
             Numero = numero;
 
+            TotalDeContasCriadas++;
             TaxaOperacao = 30 / TotalDeContasCriadas;
 
-            TotalDeContasCriadas++;
 
         }
 
@@ -60,7 +60,7 @@ namespace ByteBank
         {
             if (_saldo < valor)
             {
-                return false;
+                throw new SaldoInsuficienteExcepetion($"Saldo insuficiente para o saque no valor de {valor}");
             }
 
             _saldo -= valor;
