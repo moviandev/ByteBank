@@ -11,20 +11,19 @@ namespace ByteBank
             try
             {
                 ContaCorrente conta = new ContaCorrente(456, 123456789);
-                conta.Depositar(50);
+                ContaCorrente conta2 = new ContaCorrente(123, 123456789);
+                conta.Depositar(50000);
                 Console.WriteLine(conta.Saldo);
                 conta.Sacar(500);
                 Console.WriteLine(conta.Saldo);
+
+                conta2.Transferir(-10, conta);
             }
             catch (ArgumentException e)
             {
                 Console.WriteLine($"Argumento com problema {e.ParamName}");
             }
             catch (SaldoInsuficienteExcepetion e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
