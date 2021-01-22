@@ -12,9 +12,9 @@ namespace ByteBank
             {
                 ContaCorrente conta = new ContaCorrente(0, 0);
             }
-            catch (Exception e)
+            catch (ArgumentException e)
             {
-                Console.WriteLine($"EXCEPTION {e.Message}");
+                Console.WriteLine($"Argumento com problema {e.ParamName}");
             }
 
             Console.ReadLine();

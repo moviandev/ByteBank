@@ -36,9 +36,14 @@ namespace ByteBank
 
         public ContaCorrente(int agencia, int numero)
         {
-            if (agencia <= 0 || Numero <= 0)
+            if (agencia <= 0)
             {
-                throw new ArgumentException("Número ou agencia com valor invalido");
+                throw new ArgumentException("Agencia com valor inválido", nameof(agencia));
+            }
+
+            if (Numero <= 0)
+            {
+                throw new ArgumentException("Número com valor inválido", nameof(numero));
             }
 
             Agencia = agencia;
