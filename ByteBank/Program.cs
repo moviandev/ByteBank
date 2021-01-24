@@ -17,7 +17,7 @@ namespace ByteBank
                 conta.Sacar(500);
                 Console.WriteLine(conta.Saldo);
 
-                conta2.Transferir(-10, conta);
+                conta2.Transferir(1000000, conta);
             }
             catch (ArgumentException e)
             {
@@ -25,7 +25,10 @@ namespace ByteBank
             }
             catch (SaldoInsuficienteExcepetion e)
             {
+                Console.WriteLine(e.Saldo);
+                Console.WriteLine(e.ValorSaque);
                 Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
             }
 
             Console.ReadLine();
