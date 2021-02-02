@@ -1,6 +1,6 @@
 ﻿namespace ByteBank.Modelos
 {
-    internal class AutenticacaoHelper
+    class AutenticacaoHelper
     {
         public bool CompararSenhas(string senhaVerdadeira, string senhaTentativa)
         {
