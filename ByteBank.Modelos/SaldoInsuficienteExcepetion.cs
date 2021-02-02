@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ByteBank
+namespace ByteBank.Modelos
 {
     public class SaldoInsuficienteExcepetion : OperacaoFinanceiraException
     {

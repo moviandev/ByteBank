@@ -1,7 +1,6 @@
-﻿using ByteBank.Funcionarios;
+﻿using ByteBank.Modelos.Funcionarios;
 
-
-namespace ByteBank
+namespace ByteBank.Modelos
 {
     public class GerenciadorBonficacao
     {

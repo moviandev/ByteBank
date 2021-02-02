@@ -1,11 +1,7 @@
-﻿using ByteBank.Funcionarios;
-
-namespace ByteBank.Sistemas
+﻿namespace ByteBank.Modelos
 {
     public interface IAutenticavel
     {
-        //public string Senha { get; set; }
-
         bool Autenticar(string senha);
     }
 }
