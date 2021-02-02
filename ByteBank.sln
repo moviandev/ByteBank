@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBank", "ByteBank\ByteBank.csproj", "{D0A8765C-79D3-4F53-8E46-C2264AC21DFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBank.SistemaAgencia", "ByteBank.SistemaAgencia\ByteBank.SistemaAgencia.csproj", "{90753E18-CD4D-4802-81DE-080CD893C2DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBank.Modelos", "ByteBank.Modelos\ByteBank.Modelos.csproj", "{AAA95AF9-5884-45D6-98F5-0D317BCC224B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D0A8765C-79D3-4F53-8E46-C2264AC21DFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0A8765C-79D3-4F53-8E46-C2264AC21DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0A8765C-79D3-4F53-8E46-C2264AC21DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0A8765C-79D3-4F53-8E46-C2264AC21DFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90753E18-CD4D-4802-81DE-080CD893C2DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90753E18-CD4D-4802-81DE-080CD893C2DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90753E18-CD4D-4802-81DE-080CD893C2DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90753E18-CD4D-4802-81DE-080CD893C2DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAA95AF9-5884-45D6-98F5-0D317BCC224B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAA95AF9-5884-45D6-98F5-0D317BCC224B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAA95AF9-5884-45D6-98F5-0D317BCC224B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAA95AF9-5884-45D6-98F5-0D317BCC224B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
