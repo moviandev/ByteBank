@@ -16,6 +16,7 @@ namespace ByteBank.SistemaAgencia
 
         public void Adicionar(ContaCorrente item)
         {
+            CheckCapacity(_nextItem + 1);
             Console.WriteLine($"Adding item int at the position {_nextItem}");
             _items[_nextItem] = item;
             _nextItem++;
@@ -32,12 +33,43 @@ namespace ByteBank.SistemaAgencia
             Console.WriteLine($"Aumentando capacidade do array");
 
             for (var i = 0; i <= _items.Length - 1; i++)
-            {
                 novoArray[i] = _items[i];
-            }
 
             _items = novoArray;
 
+        }
+
+        public void EscreverListaNaTela()
+        {
+            for (var i = 0; i < _nextItem; i++)
+            {
+                ContaCorrente conta = _items[i];
+
+                Console.WriteLine($"Conta no indice {i}: {conta.Numero} {conta.Agencia}");
+            }
+        }
+
+        public void Remover(ContaCorrente item)
+        {
+            var index = -1;
+            for (var i = 0; i < _nextItem; i++)
+            {
+                var currentItem = _items[i];
+
+                if (currentItem.Equals(item))
+                { 
+                    index = i; 
+                    break; 
+                }
+            }
+
+            for (var i = index; i < _nextItem - 1; i++)
+            {
+                _items[i] = _items[i + 1];
+            }
+
+            _nextItem--;
+            _items[_nextItem] = null;
         }
     }
 }

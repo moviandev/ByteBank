@@ -100,5 +100,20 @@ namespace ByteBank.Modelos
             }
             contaDestino.Depositar(valor);
         }
+
+        public override bool Equals(object obj)
+        {
+            ContaCorrente anotherCount = obj as ContaCorrente;
+
+            if (anotherCount is null)
+                return false;
+
+            return Numero == anotherCount.Numero && Agencia == anotherCount.Agencia;
+        }
+
+        public override int GetHashCode()
+        {
+            return Numero;
+        }
     }
 }
