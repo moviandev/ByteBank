@@ -8,6 +8,13 @@ namespace ByteBank.SistemaAgencia
         private ContaCorrente[] _items;
         private int _nextItem;
 
+        public int Length { 
+            get 
+            { 
+                return _nextItem; 
+            } 
+        }
+
         public ListaContaCorrente()
         {
             _items = new ContaCorrente[5];
@@ -20,6 +27,12 @@ namespace ByteBank.SistemaAgencia
             Console.WriteLine($"Adding item int at the position {_nextItem}");
             _items[_nextItem] = item;
             _nextItem++;
+        }
+
+        internal void AdicionarVarios(params ContaCorrente[] items)
+        {
+            foreach (var conta in items)
+                Adicionar(conta);
         }
 
         private void CheckCapacity(int capacity)
@@ -49,6 +62,15 @@ namespace ByteBank.SistemaAgencia
             }
         }
 
+        public ContaCorrente GetItemNoIndice(int index)
+        {
+
+            if (index < 0 || index >= _nextItem)
+                throw new ArgumentOutOfRangeException(nameof(index));
+
+            return _items[index];
+        }
+
         public void Remover(ContaCorrente item)
         {
             var index = -1;
@@ -70,6 +92,14 @@ namespace ByteBank.SistemaAgencia
 
             _nextItem--;
             _items[_nextItem] = null;
+        }
+
+        public ContaCorrente this[int index]
+        {
+            get
+            {
+                return GetItemNoIndice(index);
+            }
         }
     }
 }

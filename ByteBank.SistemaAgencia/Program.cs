@@ -10,24 +10,22 @@ namespace ByteBank.SistemaAgencia
             ListaContaCorrente lista = new ListaContaCorrente();
             ContaCorrente contaDoGui = new ContaCorrente(111, 1111111);
 
-            lista.Adicionar(contaDoGui);
+            ContaCorrente[] contas = new ContaCorrente[]
+            {
+                contaDoGui,
+                new ContaCorrente(12345, 1234567890),
+                new ContaCorrente(12345, 1234567890),
+                new ContaCorrente(12345, 1234567890)
+            };
 
-            lista.Adicionar(new ContaCorrente(12345, 1234567890));
-            lista.Adicionar(new ContaCorrente(12345, 1234567890));
-            lista.Adicionar(new ContaCorrente(12345, 1234567890));
-            lista.Adicionar(new ContaCorrente(12345, 1234567890));
-            lista.Adicionar(new ContaCorrente(12345, 1234567890));
-            lista.Adicionar(new ContaCorrente(12345, 1234567890));
-            lista.Adicionar(new ContaCorrente(12345, 1234567890));
-            lista.Adicionar(new ContaCorrente(12345, 1234567890));
-            lista.Adicionar(new ContaCorrente(12345, 1234567890));
-            lista.EscreverListaNaTela();
+            lista.AdicionarVarios(contas);
 
-            lista.Remover(contaDoGui);
+            for (var i = 0; i <= lista.Length - 1; i++)
+            {
+                var item = lista.GetItemNoIndice(i);
 
-            Console.WriteLine("APOS REOMVER ITEM");
-
-            lista.EscreverListaNaTela();
+                Console.WriteLine($"Item no indice {i}: Conta: {item.Agencia} Numero: {item.Numero}");
+            }
 
             Console.ReadLine();
         }
