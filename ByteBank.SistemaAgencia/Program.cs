@@ -1,13 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 using ByteBank.Modelos;
+using ByteBank.SistemaAgencia.Extensoes;
 
 namespace ByteBank.SistemaAgencia
 {
-    public static class Program
+    public static partial class Program
     {
         public static void Main(string[] args)
         {
-            Lista<int> idades;
+            List<int> idades = new List<int>();
+
+            idades.Add(1);
+
+            idades.AddRange<int>(12, 23);
 
             Console.ReadLine();
         }
