@@ -1,11 +1,14 @@
 ﻿using System;
-using ByteBank.Modelos;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ByteBank.SistemaAgencia
 {
-    public class ListaContaCorrente
+    public class Lista<T>
     {
-        private ContaCorrente[] _items;
+        private T[] _items;
         private int _nextItem;
 
         public int Length
@@ -16,13 +19,13 @@ namespace ByteBank.SistemaAgencia
             }
         }
 
-        public ListaContaCorrente()
+        public Lista(int capacidadeInicial = 5)
         {
-            _items = new ContaCorrente[5];
+            _items = new T[capacidadeInicial];
             _nextItem = 0;
         }
 
-        public void Adicionar(ContaCorrente item)
+        public void Adicionar(T item)
         {
             CheckCapacity(_nextItem + 1);
             Console.WriteLine($"Adding item int at the position {_nextItem}");
@@ -30,7 +33,7 @@ namespace ByteBank.SistemaAgencia
             _nextItem++;
         }
 
-        internal void AdicionarVarios(params ContaCorrente[] items)
+        internal void AdicionarVarios(params T[] items)
         {
             foreach (var conta in items)
                 Adicionar(conta);
@@ -41,7 +44,7 @@ namespace ByteBank.SistemaAgencia
             if (_items.Length >= capacity)
                 return;
 
-            ContaCorrente[] novoArray = new ContaCorrente[capacity];
+            T[] novoArray = new T[capacity];
 
             Console.WriteLine($"Aumentando capacidade do array");
 
@@ -55,13 +58,13 @@ namespace ByteBank.SistemaAgencia
         {
             for (var i = 0; i < _nextItem; i++)
             {
-                ContaCorrente conta = _items[i];
+                T conta = _items[i];
 
                 Console.WriteLine($"Conta no indice {i}: {conta.Numero} {conta.Agencia}");
             }
         }
 
-        public ContaCorrente GetItemNoIndice(int index)
+        public T GetItemNoIndice(int index)
         {
             if (index < 0 || index >= _nextItem)
                 throw new ArgumentOutOfRangeException(nameof(index));
@@ -69,7 +72,7 @@ namespace ByteBank.SistemaAgencia
             return _items[index];
         }
 
-        public void Remover(ContaCorrente item)
+        public void Remover(T item)
         {
             var index = -1;
             for (var i = 0; i < _nextItem; i++)
@@ -89,10 +92,9 @@ namespace ByteBank.SistemaAgencia
             }
 
             _nextItem--;
-            _items[_nextItem] = null;
         }
 
-        public ContaCorrente this[int index]
+        public T this[int index]
         {
             get
             {

@@ -7,6 +7,13 @@ namespace ByteBank.SistemaAgencia
     {
         public static void Main(string[] args)
         {
+            Lista<int> idades;
+
+            Console.ReadLine();
+        }
+
+        private static void TestaListaDeContaCorrente()
+        {
             ListaContaCorrente lista = new ListaContaCorrente();
             ContaCorrente contaDoGui = new ContaCorrente(111, 1111111);
 
@@ -26,13 +33,11 @@ namespace ByteBank.SistemaAgencia
 
                 Console.WriteLine($"Item no indice {i}: Conta: {item.Agencia} Numero: {item.Numero}");
             }
-
-            Console.ReadLine();
         }
 
-        static void TestaContaArray()
+        private static void TestaContaArray()
         {
-            ContaCorrente [] contas = new ContaCorrente[]
+            ContaCorrente[] contas = new ContaCorrente[]
                 {
                     new ContaCorrente(12345, 1234567890),
                     new ContaCorrente(1234, 12567890),
@@ -45,7 +50,7 @@ namespace ByteBank.SistemaAgencia
             }
         }
 
-        static void TestaArrayInt()
+        private static void TestaArrayInt()
         {
             int[] idades = new int[6];
             idades[0] = 15;
