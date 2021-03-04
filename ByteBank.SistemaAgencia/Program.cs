@@ -15,13 +15,10 @@ namespace ByteBank.SistemaAgencia
 
             contas.AddRange(new ContaCorrente(122323, 123123), new ContaCorrente(235639, 920312308), new ContaCorrente(34987346, 4589230), null);
 
-            var contasOrdenadas = contas.OrderBy(conta =>
-            {
-                if (conta == null)
-                    return int.MaxValue;
-
-                return conta?.Numero;
-            });
+            var contasOrdenadas = contas
+                .Where(d => d != null)
+                .OrderBy(conta => conta?.Numero)
+                .ToList();
 
             foreach (var conta in contasOrdenadas)
             {
