@@ -54,16 +54,6 @@ namespace ByteBank.SistemaAgencia
             _items = novoArray;
         }
 
-        public void EscreverListaNaTela()
-        {
-            for (var i = 0; i < _nextItem; i++)
-            {
-                T conta = _items[i];
-
-                Console.WriteLine($"Conta no indice {i}: {conta.Numero} {conta.Agencia}");
-            }
-        }
-
         public T GetItemNoIndice(int index)
         {
             if (index < 0 || index >= _nextItem)

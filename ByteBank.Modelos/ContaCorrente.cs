@@ -2,7 +2,7 @@
 
 namespace ByteBank.Modelos
 {
-    public class ContaCorrente
+    public class ContaCorrente : IComparable
     {
         public Cliente Titular { get; set; }
 
@@ -15,6 +15,7 @@ namespace ByteBank.Modelos
 
         public int Agencia
         { get; }
+
         public int Numero { get; }
 
         private double _saldo = 100;
@@ -36,7 +37,6 @@ namespace ByteBank.Modelos
             }
         }
 
-
         public ContaCorrente(int agencia, int numero)
         {
             if (agencia <= 0)
@@ -54,10 +54,7 @@ namespace ByteBank.Modelos
 
             TotalDeContasCriadas++;
             TaxaOperacao = 30 / TotalDeContasCriadas;
-
-
         }
-
 
         public bool Sacar(double valor)
         {
@@ -80,7 +77,6 @@ namespace ByteBank.Modelos
         {
             _saldo += valor;
         }
-
 
         public void Transferir(double valor, ContaCorrente contaDestino)
         {
@@ -114,6 +110,23 @@ namespace ByteBank.Modelos
         public override int GetHashCode()
         {
             return Numero;
+        }
+
+        public int CompareTo(object obj)
+        {
+            // Retornar negativo quando a instância precede o obj
+            // Retornar 0 quando nossa instancia e obj for equivalentes
+            // Retornar positivo diferente de 0 quando a precedencia for de obj
+
+            // Aqui usamos "as" por conta se obj for null vamos passar nullo
+            var outraConta = obj as ContaCorrente;
+
+            if (outraConta is null || Numero < outraConta.Numero)
+                return -1;
+            else if (Numero == outraConta.Numero)
+                return 0;
+            else
+                return 1;
         }
     }
 }
