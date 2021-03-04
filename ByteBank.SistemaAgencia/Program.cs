@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ByteBank.Modelos;
+using ByteBank.SistemaAgencia.Comparers;
 using ByteBank.SistemaAgencia.Extensoes;
 
 namespace ByteBank.SistemaAgencia
@@ -26,7 +27,7 @@ namespace ByteBank.SistemaAgencia
 
             contas.AddRange(new ContaCorrente(122323, 123123), new ContaCorrente(235639, 920312308), new ContaCorrente(34987346, 4589230));
 
-            contas.Sort();
+            contas.Sort(new ContaCorrenteComparer());
 
             foreach (var conta in contas)
             {

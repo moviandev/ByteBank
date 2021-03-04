@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comparers\ContaCorrenteComparer.cs" />
     <Compile Include="Lista.cs" />
     <Compile Include="ListaContaCorrente.cs" />
     <Compile Include="Extensoes\ListExtensoes.cs" />
@@ -58,5 +59,6 @@
       <Name>ByteBank.Modelos</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
