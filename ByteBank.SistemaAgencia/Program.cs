@@ -17,32 +17,16 @@ namespace ByteBank.SistemaAgencia
 
             using (var fileStream = new FileStream(filePath, FileMode.Open))
             {
-                var buffer = new byte[1024];
-                var readBytesQuantity = -1;
+                var reader = new StreamReader(fileStream);
 
-                while (readBytesQuantity != 0)
+                while (!reader.EndOfStream)
                 {
-                    readBytesQuantity = fileStream.Read(buffer, 0, 1024);
-                    WriteBuffer(buffer, readBytesQuantity);
+                    var line = reader.ReadLine();
+                    Console.WriteLine(line);
                 }
             }
 
             Console.ReadLine();
-        }
-
-        public static void WriteBuffer(byte[] buffer, int readBytes)
-        {
-            var utf8 = Encoding.Default;
-
-            var text = utf8.GetString(buffer, 0, readBytes);
-
-            Console.Write(text);
-
-            //foreach (var myByte in buffer)
-            //{
-            //    Console.Write(myByte);
-            //    Console.Write("  ");
-            //}
         }
 
         public static void TestaLinq()
