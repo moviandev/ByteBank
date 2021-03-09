@@ -16,15 +16,12 @@ namespace ByteBank.SistemaAgencia
             var filePath = "contas.txt";
 
             using (var fileStream = new FileStream(filePath, FileMode.Open))
-            {
-                var reader = new StreamReader(fileStream);
-
+            using (var reader = new StreamReader(fileStream))
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
                     Console.WriteLine(line);
                 }
-            }
 
             Console.ReadLine();
         }
