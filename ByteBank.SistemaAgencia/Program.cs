@@ -13,7 +13,25 @@ namespace ByteBank.SistemaAgencia
     {
         public static void Main(string[] args)
         {
-            BinaryReader();
+            var fileBytes = File.ReadAllBytes("contas.txt");
+
+            Console.WriteLine($"File bytes {fileBytes.Length}");
+
+            var lines = File.ReadAllLines("contas.txt");
+
+            Console.WriteLine(lines);
+
+            foreach (var item in lines)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("Type your name");
+            var name = Console.ReadLine();
+
+            Console.WriteLine(name);
+
+            UsingInputStream();
             Console.WriteLine("End");
             Console.ReadLine();
         }
