@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="!_ReadStream.cs" />
+    <Compile Include="1_ReadStream.cs" />
+    <Compile Include="2_StreamReader.cs" />
+    <Compile Include="3_CreateFile.cs" />
     <Compile Include="Comparers\ContaCorrenteComparer.cs" />
     <Compile Include="Lista.cs" />
     <Compile Include="ListaContaCorrente.cs" />

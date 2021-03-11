@@ -13,41 +13,9 @@ namespace ByteBank.SistemaAgencia
     {
         public static void Main(string[] args)
         {
-            var filePath = "contas.txt";
-
-            using (var fileStream = new FileStream(filePath, FileMode.Open))
-            using (var reader = new StreamReader(fileStream))
-                while (!reader.EndOfStream)
-                {
-                    var line = reader.ReadLine();
-                    var cc = ConvertStringToContaCorrente(line);
-
-                    Console.WriteLine($"Account: {cc.Numero}, Agency: {cc.Agencia}, Costumer: {cc.Titular.Nome}, Limit: {cc.Saldo}");
-                }
-
+            CreateFileWithWriter();
+            Console.WriteLine("End");
             Console.ReadLine();
-        }
-
-        public static ContaCorrente ConvertStringToContaCorrente(string line)
-        {
-            var fields = line.Split(' ');
-
-            var agency = fields[0];
-            var account = fields[1];
-            var limit = fields[2].Replace('.', ',');
-            var titualr = fields[3];
-
-            var intAgency = int.Parse(agency);
-            var intAccount = int.Parse(account);
-            var doubleLimit = double.Parse(limit);
-
-            var costumer = new Cliente();
-            costumer.Nome = titualr;
-            var result = new ContaCorrente(intAgency, intAccount);
-            result.Depositar(doubleLimit);
-            result.Titular = costumer;
-
-            return result;
         }
 
         public static void TestaLinq()
