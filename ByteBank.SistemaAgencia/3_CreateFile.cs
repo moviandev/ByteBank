@@ -36,5 +36,22 @@ namespace ByteBank.SistemaAgencia
                 writer.Write("333,3333,3333.22,Pedro Silva", Encoding.UTF8);
             }
         }
+
+        private static void WriteTest()
+        {
+            var filePath = "test.txt";
+
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            using (var writer = new StreamWriter(fileStream))
+            {
+                for (int i = 0; i < 10000000; i++)
+                {
+                    writer.WriteLine($"Line {i}");
+                    writer.Flush();
+                    Console.WriteLine($"line {i} has been written");
+                    Console.ReadLine();
+                }
+            }
+        }
     }
 }

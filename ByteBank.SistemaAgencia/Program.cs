@@ -13,7 +13,7 @@ namespace ByteBank.SistemaAgencia
     {
         public static void Main(string[] args)
         {
-            CreateFileWithWriter();
+            WriteTest();
             Console.WriteLine("End");
             Console.ReadLine();
         }
